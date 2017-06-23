@@ -2,35 +2,48 @@
 
 	$(document).ready(function(){
 
-		var code = window.location.href.substr(window.location.href.indexOf('?'));
+		if (typeof $.cookie('presaved') === 'undefined'){
 
-		if(code.length > 1){
+			var code = window.location.href.substr(window.location.href.indexOf('?'));
 
-			var data = {
-				code: code.slice(6)
-			};
+			if(code.length > 1){
 
-			$.ajax({
-				url:"create-playlist.php",
-				type:"POST",
-				data: data,
+				var data = {
+					code: code.slice(6)
+				};
 
-				success:function(response) {
-					console.log(response);
-					$(".success-overlay").fadeIn("slow");
-				}
+				$.ajax({
+					url:"create-playlist.php",
+					type:"POST",
+					data: data,
 
-			});
+					success:function(response) {
+						console.log(response);
+						$(".success-overlay").fadeIn("slow");
+						$(".create-playlist").css("display", "none");
+						$.cookie('presaved', 100);
+					}
+
+				});
+
+			} else {
+
+				$(".create-playlist").click(function(){
+
+					window.location.href = "http://10.16.214.82/presave/authenticate.php";
+
+				});
+
+			}
 
 		} else {
 
-			$(".create-playlist").click(function(){
-
-				window.location.href = "http://10.16.214.82/presave/authenticate.php";
-
-			});
+			$(".success-overlay").fadeIn("slow");
+			$(".create-playlist").css("display", "none");
 
 		}
+
+
 
 
 	});
