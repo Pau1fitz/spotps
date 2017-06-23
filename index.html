@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Artist Name | Pre-save now on Spotify</title>
+	<meta name="Description" content="Pre-save artist's name and have tracks added to a Spotify playlist automatically as they are released.">
+	<meta name="Keywords" content="artistname presave, pre save, spotify, preorder, pre order, stream, streaming, music">
+	<meta property="og:title" content="Pre-save artist's name on Spotify">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+      <style>
+
+        ::-webkit-input-placeholder { color: #8d867a; }
+        :-moz-placeholder { color: #8d867a;  }
+        ::-moz-placeholder {  color: #8d867a;  }
+        :-ms-input-placeholder {  color: #8d867a;  }
+
+        #email_check label,
+        #terms_check label {
+            background: #1b1613;
+        }
+
+        #email_check input[type="checkbox"]:checked + label,
+        #terms_check input[type="checkbox"]:checked + label {
+            background: url(select.svg) center center no-repeat #1b1613;
+        }
+        #thanks {
+            color: #8d867a;
+        }
+        #bglayer {
+            background: #1b1613;
+        }
+        .login-container {
+            color: #e2ddd5;
+
+        }
+        </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+		<div id="login">
+			<div class="login-container">
+				<img class="packshot" src="edsharpe.jpg">
+				<h2 class="header">Artist Name</h2>
+				<h2 class="header header-small">Pre-save</h2>
+				<p class="header-text">Pre-save artist name debut album now and have all the tracks added to a Spotify playlist automatically. Save it here to be the first to hear them.</p>
+				<button class="create-playlist">Presave with <i class="fa fa-spotify" aria-hidden="true"></i></button>
+			</div>
+
+			<div id="bglayer"></div>
+
+		</div>
+
+		<div class="success-overlay">
+			<h2>Success!</h2>
+			<p>You have successfully presaved this album. The tracks will automatically be added to your Spotify account when they are released.</p>
+		</div>
+
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="script.js"></script>
+
+
+  </body>
+</html>
