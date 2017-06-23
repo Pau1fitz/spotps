@@ -18,23 +18,33 @@
 
 			$refreshToken = $session->getRefreshToken();
 			$userId = $api->me()->id;
+
+			$playlistName = array("name"=> "Test");
+			$playlist = $api->createUserPlaylist($userId, $playlistName);
+
+			print_r($playlist->id);
+
+			$playlistId = $playlist->id;
+
 			$content = file_get_contents('users.json');
 			$tempArray = json_decode($content, true);
 
-			print_r($userId);
-			print_r($refreshToken);
+			if(empty($tempArray)){
+				$tempArray = [];
+			}
 
-			array_push($tempArray, ["userid"=>$userId, "refreshToken" => $refreshToken]);
+			$newData = [
+ 				"userId" => $userId,
+				"refreshToken" => $refreshToken,
+				"playlistId" => $playlistId
+			];
 
-			$jsonData = json_encode($tempArray);
+			array_push($tempArray, $newData);
+			$jsonData = json_encode($tempArray, JSON_PRETTY_PRINT);
 			file_put_contents('users.json', $jsonData);
 
-			$playlistName = array("name"=> "Test");
-
-			$api->createUserPlaylist($userId, $playlistName);
-
 		} catch (SpotifyWebAPI\SpotifyWebAPIException $e) {
-		    echo $e->getMessage();
+			echo $e->getMessage();
 		}
 
 	} else {
