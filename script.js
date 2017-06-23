@@ -19,29 +19,6 @@
     }
   });
 
-  function addEmailtoDataBase(){
-    if($('#terms_notification').is(":checked")) {
-      $.ajax({
-        type: "POST",
-        url: 'https://subs.sonymusicfans.com/submit/',
-        data: {
-            'form_action': 'form-submit',
-            'form': '10791',
-            'post': '1b9d9c0d68357b03126bf7dababa78e8',
-            'field_email_address': email,
-            'default_mailing_list': 'a0S61000000ZhRAEA0',
-            'terms-of-service': 'on'
-        },
-        success: function (data) {
-          console.log(data);
-        },
-        error: function (err) {
-          console.log(err);
-        }
-      });
-    }
-  }
-
   var params = getHashParams();
   var access_token = params.access_token,
       refresh_token = params.refresh_token,
@@ -89,11 +66,6 @@
       $('#submit-btn').click(function (e) {
 
         e.preventDefault();
-        var data = {
-          name: "Rag’n’Bone Man – Human (Album)",
-          access_token: access_token,
-          refresh_token: refresh_token
-        };
 
         $.ajax({
           type: 'POST',
