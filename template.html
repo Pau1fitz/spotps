@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+  <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Rag'n'Bone Man | Pre-save the new album "Human" now on Spotify</title>
+
+	<meta name="Description" content="Pre-save artist's name and have tracks added to a Spotify playlist automatically as they are released.">
+	<meta name="Keywords" content="artistname presave, pre save, spotify, preorder, pre order, stream, streaming, music">
+	<meta property="og:title" content="Pre-save artist's name on Spotify">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+      <style>
+
+        ::-webkit-input-placeholder { color: #8d867a; }
+        :-moz-placeholder { color: #8d867a;  }
+        ::-moz-placeholder {  color: #8d867a;  }
+        :-ms-input-placeholder {  color: #8d867a;  }
+
+        #email_check label,
+        #terms_check label {
+            background: #1b1613;
+        }
+
+        #email_check input[type="checkbox"]:checked + label,
+        #terms_check input[type="checkbox"]:checked + label {
+            background: url(select.svg) center center no-repeat #1b1613;
+        }
+        #thanks {
+            color: #8d867a;
+        }
+        #bglayer {
+            background: #1b1613;
+        }
+        .login-container {
+            color: #e2ddd5;
+
+        }
+        </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+
+        <div id="login">
+            <div class="login-container">
+                <img class="packshot" src="edsharpe.jpg">
+                <h2 class="header">Name here</h2>
+                <h2 class="header header-small">Pre-save</h2>
+                <p class="header-text">Pre-save artist’s name debut album now and have all the tracks added to a Spotify playlist automatically. Save it here to be the first to hear them.</p>
+                <a class="login-link" href="/login">Login with <i class="fa fa-spotify" aria-hidden="true"></i></a>
+            </div>
+            <div id="bglayer"></div>
+        </div>
+
+
+        <div id="loggedin">
+            <section id="imageCol" style="background: #1b1613;">
+                <div id="imgHold"><img src="human.jpg"></div>
+            </section>
+            <section id="copyCol" style="background: #e2ddd5;">
+                <div id="thanks">
+                    <div class="pad">
+                        <span id="thankstext">Thanks for pre-saving</span>
+                    </div>
+                </div>
+                <div id="center">
+                    <div class="pad">
+                        <div id="release" style="color: #3e3a35;">
+                            <div id="release_title">Human, <span style="font-size: 18px;">the debut album</span></div>
+                            <div id="by" style="color: #8d867a;">By</div>
+                            <div id="artist">Rag'n'Bone Man</div>
+                            <div class="guide-holder">
+                               <p class="guide">Look for the playlist called Rag’n’Bone Man – Human (Album) on your Spotify account to hear the tracks.</p>
+                                <p class="guide">Want more? Tap the button to follow the Complete Collection with all the tracks and EPs Rag’n’Bone Man released before Human.</p>
+                               <a class="guide" href="spotify:user:ragnbonemanmusic:playlist:4YOuMV8UCPfZLE9HZArjIY"><button class='subscribe'>FOLLOW HERE</button></a>
+                            </div>
+                        </div>
+
+                        <form id="presave-form">
+                            <select id="playlist_id" class="options" name="playlist_id"  style="background: url(dropdown.svg) right center no-repeat #fffcf8; color: #8d867a; "  >
+                                <option id="addto" value="">Add to existing playlist</option>
+                            </select>
+                            <div id="create" style="border-bottom: 2px solid #3e3a35; color: #8d867a !important;">
+                                <input id="new-playlist" type="text" name="playlist_name" placeholder="Or create a new playlist..." value="">
+                            </div>
+                            <div id="email_check" style="background: #fffcf8;">
+                                <input type="checkbox" id="newsletter_notification" name="email_notification" class="checkbox">
+                                <label for="email_notification"></label>
+                                <div id="copy" style="color: #8d867a;">Click box to sign up for newsletter</div>
+                            </div>
+
+                            <div id="terms_check" style="background: #fffcf8;">
+                              <input type="checkbox" id="terms_notification" name="email_notification" class="checkbox">
+                              <label for="email_notification"></label>
+                            </div>
+                             <button class="presave-button" id="submit-btn" value="Pre-save Human" style="background: #1b1613; color: #e2ddd5;">Pre-save Human</button>
+                        </form>
+                        <div class="playlist-error-message">
+                            <p>Please select a playlist</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="script.js"></script>
+
+
+  </body>
+</html>
